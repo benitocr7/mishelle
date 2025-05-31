@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linda muchachita</title>
+    <link rel="stylesheet" href="woman.css">
+</head>
+<body>
+    <div class="main-container">
+        <h1 class="title">Linda muchachita</h1>
+        
+        <div class="stars-container">
+            <div class="star" style="top: 15%; left: 10%;">⭐</div>
+            <div class="star" style="top: 25%; left: 80%;">✨</div>
+            <div class="star" style="top: 40%; left: 15%;">💫</div>
+            <div class="star" style="top: 60%; left: 75%;">⭐</div>
+            <div class="star" style="top: 80%; left: 20%;">✨</div>
+            <div class="star" style="top: 30%; left: 60%;">💫</div>
+            <div class="star" style="top: 10%; left: 30%;">⭐</div>
+            <div class="star" style="top: 70%; left: 50%;">✨</div>
+            <div class="star" style="top: 35%; left: 90%;">💫</div>
+            <div class="star" style="top: 85%; left: 70%;">⭐</div>
+            <div class="emoji-decoration" style="top: 20%; left: 5%;">💝</div>
+            <div class="emoji-decoration" style="top: 70%; left: 85%;">💖</div>
+            <div class="emoji-decoration" style="top: 50%; left: 95%;">💕</div>
+            <div class="emoji-decoration" style="top: 85%; left: 15%;">💗</div>
+            <div class="emoji-decoration" style="top: 5%; left: 60%;">💘</div>
+            <div class="emoji-decoration" style="top: 45%; left: 5%;">💝</div>
+        </div>
+        
+        <div class="teamo-container">
+            <div class="quality-labels">
+                <span class="label perfecta">PERFECTA</span>
+                <span class="label preciosa">PRECIOSA</span>
+                <span class="label linda">LINDA</span>
+                <span class="label hermosa">HERMOSA</span>
+                <span class="label preciosa-right">PRECIOSA</span>
+                <span class="label perfecta-bottom">PERFECTA</span>
+            </div>
+            
+            <button class="teamo-button" onclick="openLoveCard()">
+                <span class="teamo-text">TE AMO</span>
+            </button>
+        </div>
+        
+        <div class="media-controls">
+            <button class="control-btn">✕</button>
+            <button class="control-btn">⏸️</button>
+            <button class="control-btn">1×</button>
+        </div>
+    </div>
+    
+    <!-- Carta de amor (oculta inicialmente) -->
+    <div id="loveCard" class="love-card-overlay">
+        <div class="love-card">
+            <button class="close-card" onclick="closeLoveCard()">✕</button>
+            <div class="card-content">
+                <h2>💕 Para ti, mi amor 💕</h2>
+                <div class="card-text">
+                    <p>Mi linda muchachita,</p>
+                    <p>Cada día que pasa me enamoro más de ti. Eres la luz que ilumina mis días oscuros, la razón de mi sonrisa y la melodía más dulce que mis oídos pueden escuchar.</p>
+                    <p>Tu belleza va más allá de lo físico, tienes un alma hermosa que me cautiva completamente. Eres perfecta, preciosa, linda... eres todo lo que siempre soñé.</p>
+                    <p>Gracias por existir y por permitirme amarte.</p>
+                    <p class="signature">Con todo mi amor infinito ❤️</p>
+                </div>
+                <div class="floating-hearts">
+                    <span class="heart">💖</span>
+                    <span class="heart">💕</span>
+                    <span class="heart">💗</span>
+                    <span class="heart">💝</span>
+                    <span class="heart">💘</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="woman.js"></script>
+</body>
+</html>

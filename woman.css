@@ -1,0 +1,385 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, #000000 0%, #1a1a2e 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.title {
+    color: white;
+    font-size: 48px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 80px;
+    text-shadow: 0 2px 20px rgba(255, 255, 255, 0.3);
+    z-index: 10;
+    position: relative;
+}
+
+.stars-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.star, .emoji-decoration {
+    position: absolute;
+    font-size: 28px;
+    animation: twinkle 2s infinite alternate;
+}
+
+.emoji-decoration {
+    font-size: 32px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.3; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.teamo-container {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    z-index: 10;
+}
+
+.quality-labels {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.label {
+    position: absolute;
+    color: #ff6b9d;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 0 0 15px rgba(255, 107, 157, 0.5);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.perfecta {
+    top: -30px;
+    left: 30px;
+}
+
+.preciosa {
+    top: 50px;
+    left: -60px;
+}
+
+.linda {
+    bottom: -20px;
+    left: 50px;
+}
+
+.hermosa {
+    top: 20px;
+    left: -80px;
+}
+
+.preciosa-right {
+    top: 60px;
+    right: -60px;
+}
+
+.perfecta-bottom {
+    bottom: 30px;
+    right: 30px;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 10px rgba(255, 107, 157, 0.5); }
+    100% { text-shadow: 0 0 20px rgba(255, 107, 157, 0.8), 0 0 30px rgba(255, 107, 157, 0.6); }
+}
+
+.teamo-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(45deg, #ff6b35, #f7931e, #ff6b35);
+    background-size: 200% 200%;
+    border: 3px solid #ff8c42;
+    border-radius: 15px;
+    padding: 20px 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: gradientShift 3s ease infinite;
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+}
+
+.teamo-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 12px 35px rgba(255, 107, 53, 0.6);
+}
+
+.teamo-button:active {
+    transform: translate(-50%, -50%) scale(0.95);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.teamo-text {
+    color: white;
+    font-size: 42px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 3px;
+}
+
+.media-controls {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    z-index: 10;
+}
+
+.control-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+/* Estilos de la carta de amor */
+.love-card-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.love-card-overlay.active {
+    display: flex;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.love-card {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(255, 154, 158, 0.3);
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from { transform: scale(0.8) translateY(50px); opacity: 0; }
+    to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.close-card {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.close-card:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 60px 40px 40px;
+    text-align: center;
+    position: relative;
+}
+
+.card-content h2 {
+    color: #d63384;
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 4px rgba(214, 51, 132, 0.3);
+}
+
+.card-text {
+    color: #495057;
+    line-height: 1.8;
+    font-size: 16px;
+    text-align: left;
+}
+
+.card-text p {
+    margin-bottom: 20px;
+}
+
+.signature {
+    text-align: center;
+    font-style: italic;
+    color: #d63384;
+    font-weight: bold;
+    margin-top: 30px !important;
+    font-size: 18px;
+}
+
+.floating-hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    font-size: 30px;
+    animation: floatHeart 4s ease-in-out infinite;
+}
+
+.heart:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+    left: 20%;
+    animation-delay: 0.8s;
+}
+
+.heart:nth-child(3) {
+    left: 80%;
+    animation-delay: 1.6s;
+}
+
+.heart:nth-child(4) {
+    left: 70%;
+    animation-delay: 2.4s;
+}
+
+.heart:nth-child(5) {
+    left: 50%;
+    animation-delay: 3.2s;
+}
+
+@keyframes floatHeart {
+    0% {
+        top: 100%;
+        opacity: 0;
+        transform: scale(0);
+    }
+    10% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    90% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        top: -10%;
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 20px;
+    }
+    
+    .title {
+        font-size: 36px;
+        margin-bottom: 60px;
+    }
+    
+    .teamo-container {
+        width: 300px;
+        height: 250px;
+    }
+    
+    .teamo-text {
+        font-size: 32px;
+    }
+    
+    .label {
+        font-size: 16px;
+    }
+    
+    .love-card {
+        width: 95%;
+        max-height: 90vh;
+    }
+    
+    .card-content {
+        padding: 50px 30px 30px;
+    }
+}
